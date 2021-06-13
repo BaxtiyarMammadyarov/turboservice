@@ -16,10 +16,7 @@ public interface UserClient {
     @PostMapping("/create")
     ResponseEntity<?> create(@RequestBody UserDto dto);
 
-    @PostMapping("/finduser")
-    ResponseEntity<?> findUser(JwtRequest request);
-
-    @PostMapping("/findUsername")
+    @PostMapping("/username")
     Optional<UserDto> findUsername(String username);
     @PostMapping("/existsEmail")
      ResponseEntity<Boolean> existsEmail(@RequestBody String email);

@@ -3,10 +3,9 @@ package az.mycompany.turboservice.controller;
 import az.mycompany.turboservice.dto.BrandDto;
 import az.mycompany.turboservice.service.BrandService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/brand")
@@ -20,5 +19,9 @@ public class BrandController {
     public ResponseEntity<?>creare(@RequestBody  BrandDto dto){
         System.out.println(dto);
         return brandService.create(dto);
+    }
+    @GetMapping
+    public ResponseEntity<?>get(){
+        return brandService.get();
     }
 }

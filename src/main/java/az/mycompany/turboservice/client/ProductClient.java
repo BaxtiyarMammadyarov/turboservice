@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public interface ProductClient {
 
     @GetMapping
-    ResponseEntity<?> get();
+    ResponseEntity<ProductDto> get();
 
     @PostMapping
     ResponseEntity<?> create(@RequestBody ProductDto product);

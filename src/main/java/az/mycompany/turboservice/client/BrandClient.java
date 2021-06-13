@@ -5,6 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @FeignClient(value = "brand",url = "http://localhost:8083/brand")
 public interface BrandClient {
 
@@ -13,7 +15,7 @@ public interface BrandClient {
     ResponseEntity<BrandDto> create(@RequestBody BrandDto brand) ;
 
     @GetMapping
-    ResponseEntity<BrandDto> get();
+    ResponseEntity<?> get();
 
 
     @DeleteMapping("/{id}")
