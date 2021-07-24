@@ -12,7 +12,7 @@
         </encoder>
     </appender>
 
-    <appender name="FILEOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="FLOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_PATH}/spring-boot-logging.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
@@ -29,20 +29,20 @@
     <springProfile name="dev">
         <root level="info">
             <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILEOUT"/>
+            <appender-ref ref="FLOUT"/>
         </root>
         <logger name="az.company.turbo" additivity="false" level="debug">
             <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILEOUT"/>
+            <appender-ref ref="FLOUT"/>
         </logger>
     </springProfile>
 
     <springProfile name="prod">
         <root level="error">
-            <appender-ref ref="FILEOUT"/>
+            <appender-ref ref="FLOUT"/>
         </root>
         <logger name="az.company.turbo" additivity="false" level="debug">
-            <appender-ref ref="FILEOUT"/>
+            <appender-ref ref="FLOUT"/>
         </logger>
     </springProfile>
 </configuration>
