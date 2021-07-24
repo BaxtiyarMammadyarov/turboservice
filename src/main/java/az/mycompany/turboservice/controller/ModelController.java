@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "model")
+@RequestMapping( "/model")
 public class ModelController {
 
     private final ModelService service;

@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name="city")
+@RequestMapping("/city")
 public class CityController {
 
     private final CityService cityService;
@@ -19,7 +19,7 @@ public class CityController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody CityDto city) {
 
-        return ResponseEntity.ok(cityService.create(city));
+        return cityService.create(city);
     }
 
     @GetMapping
@@ -30,12 +30,12 @@ public class CityController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
 
-        return ResponseEntity.ok(cityService.delete(id));
+        return cityService.delete(id);
     }
 
     @PutMapping
     public ResponseEntity<?> update(@RequestBody CityDto city) {
 
-        return ResponseEntity.ok(cityService.update(city));
+        return cityService.update(city);
     }
 }
